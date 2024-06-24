@@ -7,32 +7,29 @@ import caseRouter from "./routes/caseRoutes.js";
 import feedbackRouter from "./routes/feedbackRoutes.js";
 import messageRouter from "./routes/messageRoutes.js";
 
-const app = express();
 dotenv.config();
 
-const cors = require("cors");
+const app = express();
 
 const corsOptions = {
   origin: ["http://localhost:3000", "https://farrelan.vercel.app"],
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 const DB_URL = process.env.DB_URL;
-app.set("secretKey", process.env.SECRET_KEY);
-
-// use routers
-app.use("/user", userRouter);
-app.use("/case", caseRouter);
-app.use("/feedbacks", feedbackRouter); // Ensure this is the correct path
-app.use("/message", messageRouter);
-
-//connect database
 connectDB(DB_URL);
 
-const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => {
-  console.log("listening to port:", PORT);
+app.use("/user", userRouter);
+app.use("/case", caseRouter);
+app.use("/feedbacks", feedbackRouter);
+app.use("/message", messageRouter);
+
+app.get("/", (req, res) => {
+  res.send("API is running...");
 });
+
+export default app;
