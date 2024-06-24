@@ -1,0 +1,18 @@
+{
+  "associated_insight": "IC-9740-20240401-0000",
+  "case": "(button make new case)",
+  "case_score": "15",
+  "case_severity": "low",
+  "case_status": "On Progress",
+  "created_at": "2024-04-30 07.34.24",
+  "data_processor": "Microsoft Entra ID",
+  "finding": "(kosong)",
+  "impact_scope": "1 (budi@bankmandiri.co.id)",
+  "model_name": "WB-9740-20240430-00003 (Potential Impersonation Attempt - Impossible Travel)",
+  "owners": "joko",
+  "highlight_information": "Suspicious login attempt from a new location",
+  "technique": "Social Engineering",
+  "rules": "Rule-ID-1234 (Login attempt from new location)",
+  "ip_address": "127.0.0.1",
+  "mac_address": "AA:BB:CC:DD:EE:FF"
+}
